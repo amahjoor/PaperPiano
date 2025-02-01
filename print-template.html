@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AR Piano Template - Print Me!</title>
+    <style>
+        @page {
+            size: landscape;
+            margin: 0;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #fff;
+            font-family: Arial, sans-serif;
+        }
+        
+        .piano-container {
+            width: 1000px;
+            height: 300px;
+            border: 5px solid #000;
+            background: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .piano-keys {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            height: 220px;
+            width: 100%;
+        }
+        
+        .key {
+            flex: 1;
+            max-width: 120px;
+            height: 100%;
+            background: white;
+            border: 3px solid #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 15px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .corner-markers {
+            position: absolute;
+            width: 1040px;
+            height: 340px;
+        }
+        
+        .corner-marker {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 4px solid #000;
+        }
+        
+        .top-left {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        .top-right {
+            top: 0;
+            right: 0;
+            border-left: none;
+            border-bottom: none;
+        }
+        
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            border-right: none;
+            border-top: none;
+        }
+        
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+        
+        .print-instructions {
+            margin-bottom: 30px;
+            border: 2px solid #000;
+            padding: 20px;
+            max-width: 1000px;
+        }
+        
+        .print-instructions h2 {
+            margin-top: 0;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .print-instructions {
+                display: none;
+            }
+            .piano-container {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="print-instructions">
+            <h2>Instructions:</h2>
+            <ol>
+                <li>Print this page in landscape orientation</li>
+                <li>Make sure the corner markers are clearly visible</li>
+                <li>Place on a flat, well-lit surface</li>
+                <li>Point your phone's camera at the template</li>
+                <li>Touch the highlighted areas that appear to play!</li>
+            </ol>
+        </div>
+        
+        <div style="position: relative;">
+            <div class="corner-markers">
+                <div class="corner-marker top-left"></div>
+                <div class="corner-marker top-right"></div>
+                <div class="corner-marker bottom-left"></div>
+                <div class="corner-marker bottom-right"></div>
+            </div>
+            
+            <div class="piano-container">
+                <div class="title">AR Piano Keys</div>
+                <div class="piano-keys">
+                    <div class="key">C4</div>
+                    <div class="key">D4</div>
+                    <div class="key">E4</div>
+                    <div class="key">F4</div>
+                    <div class="key">G4</div>
+                    <div class="key">A4</div>
+                    <div class="key">B4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

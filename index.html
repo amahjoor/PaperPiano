@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AR Piano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <div id="loadingMessage">
+        Loading AR Piano...
+        <br>
+        Please allow camera access and point your camera at the piano keys drawing.
+    </div>
+    
+    <div id="instructions">
+        1. Print the piano template (piano-template.png)
+        2. Point your camera at it
+        3. Touch the keys to play!
+    </div>
+    
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono; imageTracking: true;">
+        <a-nft type="nft" url="piano-template" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
+            <a-entity id="pianoKeys" position="0 0 0"></a-entity>
+        </a-nft>
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    <script src="app.js"></script>
+</body>
+</html> 
